@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import TodoList from "./TodoList";
+import Title from "./components/Title";
 import {v4 as uuidv4} from "uuid";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <Title />
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input type="text" ref={todoNameRef} />
       <button onClick={handleAddTodo}>Add Task</button>
