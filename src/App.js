@@ -6,7 +6,13 @@ import {v4 as uuidv4} from "uuid";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  const [count, setCount] = useState(0);
+
   const todoNameRef = useRef();
+
+  const handleClick = () => {
+    setCount(count + 1);
+  }
 
   const handleAddTodo = () => {
     // Add Task
@@ -32,6 +38,9 @@ function App() {
 
   return (
     <>
+      <h1>useState</h1>
+      <button onClick={handleClick}>+</button>
+      <p>{count}</p>
       <Title />
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input type="text" ref={todoNameRef} />
