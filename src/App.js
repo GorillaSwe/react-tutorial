@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import Title from "./components/Title";
 import {v4 as uuidv4} from "uuid";
@@ -13,6 +13,10 @@ function App() {
   const handleClick = () => {
     setCount(count + 1);
   }
+
+  useEffect(() => {
+    console.log("hello")
+  }, [count]);
 
   const handleAddTodo = () => {
     // Add Task
@@ -38,7 +42,7 @@ function App() {
 
   return (
     <>
-      <h1>useState</h1>
+      <h1>useState, useEffect</h1>
       <button onClick={handleClick}>+</button>
       <p>{count}</p>
       <Title />
